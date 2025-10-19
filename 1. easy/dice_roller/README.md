@@ -1,4 +1,4 @@
-# 🎲 Dice Roller
+ 🎲 Dice Roller
 
 ## 📝 Description
 Dice roller is a simple Python project that simulates rolling two dice randomly.  
