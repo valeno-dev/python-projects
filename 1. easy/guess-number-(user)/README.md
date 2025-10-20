@@ -23,8 +23,7 @@ This project helps beginners learn about:
 ---
 
 ## 💻 Example Output
-🎯 Welcome to the Number Guessing Game!
-
+🎯 Welcome to the Number Guessing Game!<br>
 Try to guess the correct number before you run out of attempts.
 
 Guess the number from scale (1-10): 5
@@ -33,6 +32,5 @@ Guess the number from scale (1-10): 5
 
 Guess the number from scale (1-10): 7
 
-🎉 Congratulations! You guessed it right!
-
+🎉 Congratulations! You guessed it right!<br>
 Thanks for playing!
