@@ -1,7 +1,7 @@
 import random
 
 def compare(x, y):
-    """Compare user choice and bot choice, return result message."""
+    #Compare user choice and bot choice, return result message
     if x == y:
         return "It's a tie 👏"
     
@@ -18,7 +18,7 @@ def compare(x, y):
 
 
 def rock_paper_scissors():
-    """Main game logic."""
+    #Main game logic
     choices = ["r", "p", "s"]
     bot_choice = random.choice(choices)
     
@@ -32,7 +32,7 @@ def rock_paper_scissors():
 
 
 def main():
-    """Main loop for playing multiple rounds."""
+    #Main loop for playing multiple rounds
     while True:
         rock_paper_scissors()
         play_again = input("Play again? (y/n): ").lower()
@@ -43,3 +43,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
