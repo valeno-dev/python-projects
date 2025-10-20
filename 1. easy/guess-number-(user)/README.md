@@ -18,4 +18,17 @@ This project helps beginners learn about:
 3. If your guess is correct — 🎉 Congratulations! You win.  
 4. If your guess is incorrect — you lose one attempt.  
 5. When you run out of attempts, the correct number is revealed.  
-6. After the game ends, a “Thanks for playing!” message is displayed.  
+6. After the game ends, a “Thanks for playing!” message is displayed.
+
+---
+
+## 💻 Example Output
+🎯 Welcome to the Number Guessing Game!
+Try to guess the correct number before you run out of attempts.
+
+Guess the number from scale (1-10): 5
+❌ Wrong! You have 4 attempt(s) left.
+
+Guess the number from scale (1-10): 7
+🎉 Congratulations! You guessed it right!
+Thanks for playing!
