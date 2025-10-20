@@ -24,11 +24,15 @@ This project helps beginners learn about:
 
 ## 💻 Example Output
 🎯 Welcome to the Number Guessing Game!
+
 Try to guess the correct number before you run out of attempts.
 
 Guess the number from scale (1-10): 5
+
 ❌ Wrong! You have 4 attempt(s) left.
 
 Guess the number from scale (1-10): 7
+
 🎉 Congratulations! You guessed it right!
+
 Thanks for playing!
