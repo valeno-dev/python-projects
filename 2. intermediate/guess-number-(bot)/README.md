@@ -10,6 +10,15 @@ This project is part of the **Intermediate Python Projects** collection — grea
 
 ---
 
+## 💡 Features
+- Two guessing modes: Random & Smart (Binary Search)
+- Input validation for user responses
+- Friendly user prompts and emojis for better interaction
+- Docstring documentation inside the main function
+- Clean and modular structure using `if __name__ == "__main__":`
+
+---
+
 ## ⚙️ How It Works
 1. You decide a range (e.g., 1–100) and the number of attempts (e.g., 7).
 2. The bot asks which mode you want to use:
@@ -21,25 +30,22 @@ This project is part of the **Intermediate Python Projects** collection — grea
 
 ---
 
-## 💡 Features
-- Two guessing modes: Random & Smart (Binary Search)
-- Input validation for user responses
-- Friendly user prompts and emojis for better interaction
-- Docstring documentation inside the main function
-- Clean and modular structure using `if __name__ == "__main__":`
-
----
-
 ## 🖥️ Example Output
-🎯 Think of a number between 1 and 100, and I will try to guess it!<b>
+🎯 Think of a number between 1 and 100, and I will try to guess it!<br>
 🤖 I have 7 attempts to guess correctly!. After each guess, tell me if I'm too high or too low!
 
-1️⃣ Random Mode (guess randomly each time)<b>
+1️⃣ Random Mode (guess randomly each time)<br>
 2️⃣ Smart Mode (binary search)
 
 Enter your choice (1 or 2): 2
 
-My guess is: 50
-Is it correct? (yes/no): no
-Too low (L) or too high (H)? l
+My guess is: 50<br>
+Is it correct? (yes/no): no<br>
+Too low (L) or too high (H)? l<br>
 I've 6 attempt(s) left 🤔
+
+My guess is: 75<br>
+Is it correct? (yes/no): no<br>
+Too low (L) or too high (H)? h<br>
+I've 5 attempt(s) left 🤔<br>
+...
