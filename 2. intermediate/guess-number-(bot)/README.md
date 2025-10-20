@@ -32,7 +32,7 @@ This project is part of the **Intermediate Python Projects** collection — grea
 
 ## 🖥️ Example Output
 🎯 Think of a number between 1 and 100, and I will try to guess it!<br>
-🤖 I have 7 attempts to guess correctly!. After each guess, tell me if I'm too high or too low!
+🤖 I have 7 attempts to guess correctly! After each guess, tell me if I'm too high or too low!
 
 1️⃣ Random Mode (guess randomly each time)<br>
 2️⃣ Smart Mode (binary search)
