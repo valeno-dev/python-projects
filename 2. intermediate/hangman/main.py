@@ -1,5 +1,4 @@
 
-
 import random
 
 words = ["apple", "banana", "orange", "grape", "mango", "pineapple", "watermelon", "strawberry", "blueberry", "kiwi", "papaya", "peach", "cherry", "coconut", "dragonfruit", "melon", "blackberry", "lemon"]
@@ -32,7 +31,6 @@ hangman_art = {0: ("   ",
 A simple word guessing game where you try to reveal the hidden word
 before the hangman is complete.
 """
-
 
 def main():
 
@@ -139,4 +137,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
