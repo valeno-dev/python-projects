@@ -1,9 +1,5 @@
 # 🧩 Hangman (Python Project)
 
-A simple yet fun **Hangman word-guessing game** built with Python.  
-Try to guess the hidden word before the hangman is fully drawn 💀.  
-You can also choose between **three difficulty levels** — Easy, Medium, and Hard!
-
 ---
 
 ## 🧠 Description
@@ -39,5 +35,31 @@ You win if you reveal all letters before running out of attempts!
 ---
 
 ## 🕹️ Example Output
+Difficulty levels: 
+1️⃣ Easy
+2️⃣ Medium
+3️⃣ Hard
 
+Enter your choice (1, 2, 3): 2
+_______
+ o
+/|\
+/ \
+_______
+
+
+_ _ _ _ _ _ _   
+
+Guess the word: a
+Wrong (❌), You have 5 attempt(s) left
+_______
+ o
+/|\
+/
+_______
+
+
+_ _ _ _ _ _ _
+
+Guess the word:
 
