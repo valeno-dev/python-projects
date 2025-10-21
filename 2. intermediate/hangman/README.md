@@ -1,7 +1,5 @@
 # 🧩 Hangman (Python Project)
 
----
-
 ## 🧠 Description
 Hangman is a classic guessing game where the player tries to identify a hidden word  
 by suggesting one letter at a time. Each wrong guess brings the hangman closer to doom 😢.  
