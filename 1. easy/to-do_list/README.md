@@ -34,7 +34,7 @@ It’s built entirely with **basic Python concepts** like lists, dictionaries, l
 2. Add a new task  <br>
 3. Mark a task as done  <br>
 4. Delete a task  <br>
-5. Exit
+5. Exit<br>
 =========================
 
 Enter your choice: 2
