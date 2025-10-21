@@ -34,7 +34,7 @@ It’s built entirely with **basic Python concepts** like lists, dictionaries, l
 2. Add a new task  <br>
 3. Mark a task as done  <br>
 4. Delete a task  <br>
-5. Exit  <br>
+5. Exit<br>
 =========================
 
 Enter your choice: 2
@@ -47,7 +47,7 @@ Task 'Study Python' added successfully
 2. Add a new task  <br>
 3. Mark a task as done  <br>
 4. Delete a task  <br>
-5. Exit  <br>
+5. Exit<br>
 =========================
 
 Enter your choice: 1
@@ -61,7 +61,7 @@ Total tasks: 1
 2. Add a new task  <br>
 3. Mark a task as done  <br>
 4. Delete a task  <br>
-5. Exit  <br>
+5. Exit<br>
 =========================
 
 Enter your choice: 3
@@ -78,7 +78,7 @@ Task 'Study Python' marked as done ✅
 2. Add a new task  <br>
 3. Mark a task as done  <br>
 4. Delete a task  <br>
-5. Exit  <br>
+5. Exit<br>
 =========================
 
 Enter your choice: 5
