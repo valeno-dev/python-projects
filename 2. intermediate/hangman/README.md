@@ -40,7 +40,7 @@ Difficulty levels: <br>
 
 Enter your choice (1, 2, 3): 2 <br>
 _______ <br>
- o <br>
+  o <br>
 /|\ <br>
 / \ <br>
 _______ <br>
@@ -51,7 +51,7 @@ _ _ _ _ _ _ _  <br>
 Guess the word: a <br>
 Wrong (❌), You have 5 attempt(s) left <br>
 _______ <br>
- o <br>
+  o <br>
 /|\ <br>
 /  <br>
 _______ <br>
