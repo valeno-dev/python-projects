@@ -1,4 +1,4 @@
-# 🧩 Hangman (Python Project)
+# 🧩 Hangman 
 
 ## 🧠 Description
 Hangman is a classic guessing game where the player tries to identify a hidden word  
@@ -33,31 +33,31 @@ You win if you reveal all letters before running out of attempts!
 ---
 
 ## 🕹️ Example Output
-Difficulty levels: 
-1️⃣ Easy
-2️⃣ Medium
+Difficulty levels: <br>
+1️⃣ Easy<br>
+2️⃣ Medium<br>
 3️⃣ Hard
 
-Enter your choice (1, 2, 3): 2
-_______
- o
-/|\
-/ \
-_______
-
-
-_ _ _ _ _ _ _   
-
-Guess the word: a
-Wrong (❌), You have 5 attempt(s) left
-_______
- o
-/|\
-/
+Enter your choice (1, 2, 3): 2<br>
+_______<br>
+ o<br>
+/|\<br>
+/ \<br>
 _______
 
 
-_ _ _ _ _ _ _
+_ _ _ _ _ _ _   <br>
+
+Guess the word: a<br>
+Wrong (❌), You have 5 attempt(s) left<br>
+_______<br>
+ o<br>
+/|\<br>
+/<br>
+_______
+
+
+_ _ _ _ _ _ _<br>
 
 Guess the word:
 
