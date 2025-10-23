@@ -25,7 +25,7 @@ You win if you reveal all letters before running out of attempts!
   - 🟡 **Medium** → Words with 6–8 letters  
   - 🔴 **Hard** → Words with > 8 letters  
 - You have **6 total attempts**.  
-- For every incorrect guess, part of the hangman appears.  
+- For every incorrect guess, part of the hangman will be gone.  
 - The game ends when:
   - You guess the full word ✅
   - or all attempts are used up 💀
@@ -68,4 +68,10 @@ Wrong (❌), you have 5 attempt(s) left. <br>
 _ _ a _ _ _
 
 Guess a letter:
+
+---
+
+## 🏆 Author
+Created by valeno <br>
+if you like this project, consider giving it a star(⭐) on GitHub!
 
