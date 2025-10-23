@@ -73,5 +73,5 @@ Guess a letter:
 
 ## 🏆 Author
 Created by valeno <br>
-if you like this project, consider giving it a star(⭐) on GitHub!
+If you like this project, consider giving it a star(⭐) on GitHub!
 
