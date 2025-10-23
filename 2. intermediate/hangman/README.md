@@ -45,7 +45,7 @@ Enter your choice (1, 2, 3): 2 <br>
 / \ <br>
 ------ <br>
 
-_ _ _ _ _ _
+_ _ _ _ _ _ <br>
 
 Guess a letter: a <br>
 Correct (✅) <br>
