@@ -85,3 +85,9 @@ Enter your choice: 5
 
 Thank you for your work!
 
+---
+
+## 🏆 Author
+Created by valeno <br>
+If you like this project, consider giving it a star(⭐) on GitHub!
+
