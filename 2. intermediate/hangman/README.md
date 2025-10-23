@@ -33,31 +33,39 @@ You win if you reveal all letters before running out of attempts!
 ---
 
 ## 🕹️ Example Output
-Difficulty levels: <br>
-1️⃣ Easy<br>
-2️⃣ Medium<br>
-3️⃣ Hard
+Difficulty levels:
+1️⃣   Easy
+2️⃣   Medium
+3️⃣   Hard
 
-Enter your choice (1, 2, 3): 2 <br>
-_______ <br>
-  o <br>
-/|\ <br>
-/ \ <br>
-_______ <br>
+Enter your choice (1, 2, 3): 2
+______
+ o
+/|\
+/ \
+______
 
+_ _ _ _ _ _
 
-_ _ _ _ _ _ _  <br>
+Guess a letter: a
+Correct (✅)
+______
+ o
+/|\
+/ \
+______
 
-Guess the word: a <br>
-Wrong (❌), You have 5 attempt(s) left <br>
-_______ <br>
-  o <br>
-/|\ <br>
-/  <br>
-_______ <br>
+_ _ a _ _ _
 
+Guess a letter: q
+Wrong (❌), you have 5 attempt(s) left.
+______
+ o
+/|\
+/
+______
 
-_ _ _ _ _ _ _ <br>
+_ _ a _ _ _
 
-Guess the word:
+Guess a letter:
 
