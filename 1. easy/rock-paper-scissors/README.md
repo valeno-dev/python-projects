@@ -36,3 +36,10 @@ Play again? (y/n): y
 Choose Rock (R) / Paper (P) / Scissors (S): p
 
 It's a tie 👏, user: (P), bot: (P)
+
+---
+
+## 🏆 Author
+Created by valeno <br>
+If you like this project, consider giving it a star(⭐) on GitHub!
+
