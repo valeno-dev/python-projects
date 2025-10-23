@@ -20,3 +20,10 @@ This project demonstrates the use of:
 2. If you enter **“y”** or **“yes”**, two random numbers between **1 and 6** will appear as the dice result.
 3. If you enter **“n”** or **“no”**, the program will stop with a goodbye message.
 4. If you enter anything else, the program will display an “Invalid input” message.
+
+---
+
+## 🏆 Author
+Created by valeno <br>
+If you like this project, consider giving it a star(⭐) on GitHub!
+
