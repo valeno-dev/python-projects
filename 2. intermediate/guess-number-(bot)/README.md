@@ -49,3 +49,10 @@ Is it correct? (yes/no): no<br>
 Too low (L) or too high (H)? h<br>
 I've 5 attempt(s) left 🤔<br>
 ...
+
+---
+
+## 🏆 Author
+Created by valeno <br>
+If you like this project, consider giving it a star(⭐) on GitHub!
+
