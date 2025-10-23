@@ -1,6 +1,13 @@
 import random
 
-words = ["apple", "banana", "orange", "grape", "mango", "pineapple", "watermelon", "strawberry", "blueberry", "kiwi", "papaya", "peach", "cherry", "coconut", "dragonfruit", "melon", "blackberry", "lemon"]
+# List of possible words for the Hangman game
+words = [
+    "apple", "banana", "orange", "grape", "mango", "pineapple", "watermelon", 
+    "strawberry", "blueberry", "kiwi", "papaya", "peach", "cherry", 
+    "coconut", "dragonfruit", "melon", "blackberry", "lemon"
+]
+
+# Dictionary representing the hangman stages
 hangman_art = {
     0: ("   ",
         "DEATH",
@@ -38,7 +45,7 @@ def main():
     Handles word selection, difficulty level, and game loop.
     """
 
-    # List untuk menampung kata sesuai tingkat kesulitan
+    # List to store words that match the selected difficulty
     words_selection = []
 
     # Difficulty levels
@@ -53,6 +60,7 @@ def main():
         print("⚠️  Invalid input! Defaulting to Medium level")
         difficulty_selection = "2"
         
+    # Filter words based on difficulty
     if difficulty_selection == "1":
         for x in range(len(words)):
             if len(words[x]) <= 5:
@@ -68,17 +76,19 @@ def main():
             if len(words[x]) > 8:
                 words_selection.append(words[x])
     
-    # Cegah error jika tidak ada kata yang cocok
+    # Prevent error if no words are found for the chosen difficulty
     if not words_selection:
         print("⚠️  No words available for this difficulty level.")
         return
 
+    # Choose a random word from the filtered list
     word = random.choice(words_selection)
     underscore_words = ["_"] * len(word)
     guessed_word = []
     attempts = 6
     wrong_attempts = 6
     
+    # Game loop
     while attempts > 0:
         print("_" * len(word))
         for x in hangman_art[wrong_attempts]:
@@ -88,29 +98,28 @@ def main():
         print("\n")
         print(" ".join(underscore_words))
         
-        # user input
-        user_guess = input("\nGuess the word: ").strip().lower()
+        # User input
+        user_guess = input("\nGuess a letter: ").strip().lower()
         
-        # error handling
-        # if user input number
+        # Input validation
         if not user_guess.isalpha():
             print("Sorry, you can't input a number!")
             print("Try again!")
             continue
-        # if user input more than one letter
+        
         if len(user_guess) != 1:
             print("You can only input one letter!")
             print("Try again!")
             continue
         
-        # if word has been guessed
         if user_guess in guessed_word:
-            print("It has been guessed")
+            print("You already guessed that letter.")
             print("Try again!")
             continue
         
         guessed_word.append(user_guess)
-        # ifelse guess
+        
+        # Check if the guessed letter is in the word
         if user_guess in word:
             for i in range(len(word)):
                 if word[i] == user_guess:
@@ -120,19 +129,19 @@ def main():
             attempts -= 1
             wrong_attempts -= 1
             if attempts != 0:    
-                print(f"Wrong (❌), You have {attempts} attempt(s) left")
+                print(f"Wrong (❌), you have {attempts} attempt(s) left.")
             
-        # win
+        # Win condition
         if "_" not in underscore_words:
             print("_" * len(word))
             for x in hangman_art[wrong_attempts]:
                 print(x)
             print("_" * len(word))
-            print("\n🎉 Congratulations! You guessed the word:", word)
+            print(f"\n🎉 Congratulations! You guessed the word: {word}")
             print("🏆 You win!\n")
             break
         
-    # lose
+    # Lose condition
     else:
         print("_" * len(word))
         for x in hangman_art[wrong_attempts]:
