@@ -34,3 +34,10 @@ Guess the number from scale (1-10): 7
 
 🎉 Congratulations! You guessed it right!<br>
 Thanks for playing!
+
+---
+
+## 🏆 Author
+Created by valeno <br>
+If you like this project, consider giving it a star(⭐) on GitHub!
+
