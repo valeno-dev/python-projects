@@ -2,34 +2,81 @@ import random
 
 # Word list for the Hangman game
 words = [
-    "apple", "banana", "orange", "grape", "mango", "pineapple", "watermelon", 
-    "strawberry", "blueberry", "kiwi", "papaya", "peach", "cherry", 
-    "coconut", "dragonfruit", "melon", "blackberry", "lemon"
+    "plastic", "journey", "worship", "caption", "vampire",
+    "flaming", "kitchen", "sandbox", "treacle", "founder",
+    "bracket", "harmful", "digitsy", "cupcake", "joyment",
+    "harvest", "twinkle", "sandbox", "lighten", "foreman", "adventure", "paintwork", "formulate", "submarine", "vibration",
+    "wonderful", "blackouts", "marketing", "currency", "adjective",
+    "framework", "polygonal", "secluding", "vocalizer", "drumstick",
+    "turbofan", "landpiece", "patchwork", "minotaur", "volcanist", "backgrounds", "documentary", "journalistic", "countervails", "volunteering",
+    "exclusionary", "flamethrower", "brainwashed", "pseudomythic", "unforgivable",
+    "mastercoding", "configurable", "predictalism", "harmonizable", "unexploited",
+    "fractogenous", "diplomancer", "adventurous", "reclaimghost", "touchingware"
 ]
 
 # Hangman display stages based on remaining attempts
 hangman_art = {
-    6: (" o ",
-        "/|\\ ",
-        "/ \\"),
-    5: (" o ",
-        "/|\\ ",
-        "/  "),
-    4: (" o ",
-        "/|\\ ",
-        "   "),
-    3: (" o ",
-        " |\\",
-        "   "),
-    2: (" o ",
-        " | ",
-        "   "),
-    1: (" o ",
-        "   ",
-        "   "),
-    0: ("   ",
-        "DEATH",
-        "   "),
+    9: ("       ",
+        "       ",
+        "|      ",
+        "|      ",
+        "|      ",
+        "|      "),
+    8: ("       ",
+        "|/     ",
+        "|      ",
+        "|      ",
+        "|      ",
+        "|      "),
+    7: ("______ ",
+        "|/     ",
+        "|      ",
+        "|      ",
+        "|      ",
+        "|      "),
+    6: ("______ ",
+        "|/  |  ",
+        "|      ",
+        "|      ",
+        "|      ",
+        "|      "),
+    5: ("______ ",
+        "|/  |  ",
+        "|   o  ",
+        "|      ",
+        "|      ",
+        "|      "),
+    4: ("______ ",
+        "|/  |  ",
+        "|   o  ",
+        "|  /   ",
+        "|      ",
+        "|      "),
+    3: ("______ ",
+        "|/  |  ",
+        "|   o  ",
+        "|  /|  ",
+        "|      ",
+        "|      "),
+    2: ("______ ",
+        "|/  |  ",
+        "|   o  ",
+        "|  /|\\",
+        "|      ",
+        "|      "),
+    1: ("______ ",
+        "|/  |  ",
+        "|   o  ",
+        "|  /|\\",
+        "|  /   ",
+        "|      "),
+    0: ("______ ",
+        "|/  |  ",
+        "|   o  ",
+        "|  /|\\",
+        "|  / \\",
+        "|      "),
+    
 }
 
 
@@ -57,15 +104,15 @@ def main():
     # Filter words based on difficulty level
     if difficulty_selection == "1":
         for x in words:
-            if len(x) <= 5:
+            if len(x) <= 7:
                 words_selection.append(x)
     elif difficulty_selection == "2":
         for x in words:
-            if 5 < len(x) <= 8:
+            if 7 < len(x) <= 10:
                 words_selection.append(x)
     else:
         for x in words:
-            if len(x) > 8:
+            if 10 < len(x) <= 13:
                 words_selection.append(x)
 
     # Stop game if no words match the difficulty
@@ -73,19 +120,44 @@ def main():
         print("⚠️  No words available for this difficulty level.")
         return
 
-    word = random.choice(words_selection)
+    word = random.choice(words_selection).lower()
     underscore_words = ["_"] * len(word)
+    revealed_letters = set()
+
+    # Early hint
+    if difficulty_selection == "1":
+        while len(revealed_letters) < min(2, len(set(word))):
+            random_letter = random.choice(word)
+            revealed_letters.add(random_letter)
+            
+        for letter in revealed_letters:    
+            for x in range(len(word)):
+                if word[x] == letter:
+                    underscore_words[x] = letter
+    elif difficulty_selection == "2":
+        while len(revealed_letters) < min(1, len(set(word))):
+            random_letter = random.choice(word)
+            revealed_letters.add(random_letter)
+            
+        for letter in revealed_letters:    
+            for x in range(len(word)):
+                if word[x] == letter:
+                    underscore_words[x] = letter
+    else:
+        pass
+            
+    
     guessed_word = []
-    attempts = 6  # Number of incorrect guesses allowed
+    attempts = 9  # Number of incorrect guesses allowed
 
     # --- Game loop ---
     while attempts > 0:
         print("_" * len(word))
         for x in hangman_art[attempts]:
             print(x)
-        print("_" * len(word))
+        
+        
         print("\n" + " ".join(underscore_words))
-
         user_guess = input("\nGuess a letter: ").strip().lower()
 
         # Input validation
