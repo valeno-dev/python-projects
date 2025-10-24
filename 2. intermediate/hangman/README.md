@@ -1,20 +1,33 @@
-# 🧩 Hangman 
+# 🎮 Hangman Game (Python)
 
-## 🧠 Description
-Hangman is a classic guessing game where the player tries to identify a hidden word  
-by suggesting one letter at a time. Each wrong guess brings the hangman closer to doom 😢.  
-You win if you reveal all letters before running out of attempts!
+A simple and fun console-based Hangman game built with Python.  
+Try to guess the hidden word before your character is fully hanged!
 
 ---
 
-## 📜 Features
-- 🧩 3 Difficulty levels (Easy / Medium / Hard)
-- ✅ Input validation (no numbers or repeated letters)
-- 🎨 Simple ASCII hangman art
-- 🧠 Randomized word selection
-- 🎯 Clean, beginner-friendly structure
-- 💬 Fun messages and emoji indicators
+## 🧠 Description
+This project is a console version of the classic Hangman game.  
+It features multiple difficulty levels, random word selection,  
+and early hints to make gameplay more interesting.
 
+---
+
+## 🧩 Features
+- 🟢 3 difficulty levels: Easy, Medium, Hard  
+- 💡 Early hints (1–2 random letters revealed depending on difficulty)  
+- 🎨 ASCII-based hangman visualization  
+- ✅ Input validation (no numbers or duplicate guesses)
+- 🎯 Clean, beginner-friendly structure
+- 🏆 Win & Lose system with feedback messages  
+
+---
+
+## ⚙️ Example Difficulty Levels
+| Difficulty | Word Length | Hints |
+|-------------|--------------|-------|
+| Easy        | ≤ 7          | 2 letters revealed |
+| Medium      | 8–10         | 1 letter revealed |
+| Hard        | 11–13        | No hints |
 
 ---
 
