@@ -64,7 +64,7 @@ _ _ _ _ _ r e
 
 Guess a letter: a <br>
 Correct (✅) <br>
-_______    
+_______ <br>
 
 
 | <br>
@@ -76,7 +76,7 @@ _ a _ _ _ r e
 
 Guess a letter: q <br>
 Wrong (❌), you have 8 attempt(s) left. <br>
-_______
+_______ <br>
 
 |/ <br>
 | <br>
