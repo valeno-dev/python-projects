@@ -121,6 +121,7 @@ def main():
         return
 
     word = random.choice(words_selection).lower()
+    guessed_word = []
     underscore_words = ["_"] * len(word)
     revealed_letters = set()
 
@@ -128,6 +129,7 @@ def main():
     if difficulty_selection == "1":
         while len(revealed_letters) < min(2, len(set(word))):
             random_letter = random.choice(word)
+            guessed_word.append(random_letter)
             revealed_letters.add(random_letter)
             
         for letter in revealed_letters:    
@@ -137,6 +139,7 @@ def main():
     elif difficulty_selection == "2":
         while len(revealed_letters) < min(1, len(set(word))):
             random_letter = random.choice(word)
+            guessed_word.append(random_letter)
             revealed_letters.add(random_letter)
             
         for letter in revealed_letters:    
@@ -147,7 +150,6 @@ def main():
         pass
             
     
-    guessed_word = []
     attempts = 9  # Number of incorrect guesses allowed
 
     # --- Game loop ---
@@ -168,7 +170,7 @@ def main():
             print("You can only input one letter!")
             continue
         if user_guess in guessed_word:
-            print("You already guessed that letter.")
+            print("The letter has been guessed.")
             continue
 
         guessed_word.append(user_guess)
