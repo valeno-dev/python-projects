@@ -1,7 +1,11 @@
+
 import random
 
-# Word list for the Hangman game
-words = [
+# =============
+# DATA SECTION
+# =============
+
+WORDS = [
     "plastic", "journey", "worship", "caption", "vampire",
     "flaming", "kitchen", "sandbox", "treacle", "founder",
     "bracket", "harmful", "digitsy", "cupcake", "joyment",
@@ -14,16 +18,21 @@ words = [
     "fractogenous", "diplomancer", "adventurous", "reclaimghost", "touchingware"
 ]
 
-# Hangman display stages based on remaining attempts
-hangman_art = {
+HANGMAN_ART = {
+    10: ("      ",
+        "       ",
+        "       ",
+        "       ",
+        "       ",
+        "       "),
     9: ("       ",
         "       ",
         "|      ",
         "|      ",
         "|      ",
         "|      "),
-    8: ("       ",
-        "|/     ",
+    8: ("______ ",
+        "|      ",
         "|      ",
         "|      ",
         "|      ",
@@ -49,13 +58,13 @@ hangman_art = {
     4: ("______ ",
         "|/  |  ",
         "|   o  ",
-        "|  /   ",
+        "|   |  ",
         "|      ",
         "|      "),
     3: ("______ ",
         "|/  |  ",
         "|   o  ",
-        "|  /|  ",
+        "|   |\\",
         "|      ",
         "|      "),
     2: ("______ ",
@@ -68,7 +77,7 @@ hangman_art = {
         "|/  |  ",
         "|   o  ",
         "|  /|\\",
-        "|  /   ",
+        "|    \\",
         "|      "),
     0: ("______ ",
         "|/  |  ",
@@ -76,46 +85,110 @@ hangman_art = {
         "|  /|\\",
         "|  / \\",
         "|      "),
-    
 }
 
 
-"""
-🎮 Hangman Game
-A simple word guessing game where the player tries to reveal
-the hidden word before the hangman is complete.
-"""
+# =================
+# FUNCTION SECTION
+# =================
 
-def main():
-    # Prepare word selection list
-    words_selection = []
+def display_hangman(attempts: int):
+    #Display hangman art according to remaining attempts.
+    for line in HANGMAN_ART[attempts]:
+        print(line)
 
-    # Difficulty selection
+
+def show_difficulty_menu():
+    #Show difficulty menu.
     print("\nDifficulty levels: ")
     print("1️⃣   Easy")
     print("2️⃣   Medium")
     print("3️⃣   Hard")
 
-    difficulty_selection = input("\nEnter your choice (1, 2, 3): ").strip()
-    if difficulty_selection not in ("1", "2", "3"):
-        print("⚠️  Invalid input! Defaulting to Medium level.")
-        difficulty_selection = "2"
 
-    # Filter words based on difficulty level
-    if difficulty_selection == "1":
-        for x in words:
-            if len(x) <= 7:
-                words_selection.append(x)
-    elif difficulty_selection == "2":
-        for x in words:
-            if 7 < len(x) <= 10:
-                words_selection.append(x)
+def select_words_by_difficulty(difficulty: str):
+    #Return list of words based on chosen difficulty.
+    if difficulty == "1":
+        return [w for w in WORDS if len(w) <= 7]
+    elif difficulty == "2":
+        return [w for w in WORDS if 7 < len(w) <= 10]
+    elif difficulty == "3":
+        return [w for w in WORDS if 10 < len(w) <= 13]
     else:
-        for x in words:
-            if 10 < len(x) <= 13:
-                words_selection.append(x)
+        print("⚠️  Invalid input! Defaulting to Medium level.")
+        return [w for w in WORDS if 7 < len(w) <= 10]
 
-    # Stop game if no words match the difficulty
+
+def give_early_hint(difficulty: str, word: str, underscore_words: list, guessed_word: list):
+    #Reveal 1–2 letters based on difficulty.
+    revealed_letters = set()
+    if difficulty == "1":
+        num_hint = 2
+    elif difficulty == "2":
+        num_hint = 1
+    else:
+        num_hint = 0
+
+    while len(revealed_letters) < min(num_hint, len(set(word))):
+        letter = random.choice(word)
+        revealed_letters.add(letter)
+        guessed_word.append(letter)
+
+    for letter in revealed_letters:
+        for i, w in enumerate(word):
+            if w == letter:
+                underscore_words[i] = letter
+
+
+def validate_input(user_guess: str, guessed_word: list):
+    """Validate player input."""
+    if not user_guess.isalpha():
+        print("Sorry, you can't input a number!")
+        return False
+    if len(user_guess) != 1:
+        print("You can only input one letter!")
+        return False
+    if user_guess in guessed_word:
+        print("The letter has been guessed.")
+        return False
+    return True
+
+
+def handle_correct_guess(user_guess: str, word: str, underscore_words: list):
+    """Update display for correct guess."""
+    for i, letter in enumerate(word):
+        if letter == user_guess:
+            underscore_words[i] = user_guess
+    print("Correct (✅)")
+
+
+def handle_wrong_guess(attempts: int):
+    """Handle wrong guess and reduce attempt count."""
+    attempts -= 1
+    if attempts != 0:
+        print(f"Wrong (❌), you have {attempts} attempt(s) left.")
+    return attempts
+
+
+def show_game_state(word: str, attempts: int, underscore_words: list):
+    """Display hangman and word progress."""
+    print("_" * len(word))
+    display_hangman(attempts)
+    print("\n" + " ".join(underscore_words))
+
+
+# ===============
+# MAIN GAME LOOP
+# ===============
+
+def main():
+    print("\n🎮 HANGMAN GAME")
+    print("Guess the word before the hangman is complete!\n")
+
+    show_difficulty_menu()
+    difficulty = input("\nEnter your choice (1, 2, 3): ").strip()
+
+    words_selection = select_words_by_difficulty(difficulty)
     if not words_selection:
         print("⚠️  No words available for this difficulty level.")
         return
@@ -123,87 +196,33 @@ def main():
     word = random.choice(words_selection).lower()
     guessed_word = []
     underscore_words = ["_"] * len(word)
-    revealed_letters = set()
 
-    # Early hint
-    if difficulty_selection == "1":
-        while len(revealed_letters) < min(2, len(set(word))):
-            random_letter = random.choice(word)
-            guessed_word.append(random_letter)
-            revealed_letters.add(random_letter)
-            
-        for letter in revealed_letters:    
-            for x in range(len(word)):
-                if word[x] == letter:
-                    underscore_words[x] = letter
-    elif difficulty_selection == "2":
-        while len(revealed_letters) < min(1, len(set(word))):
-            random_letter = random.choice(word)
-            guessed_word.append(random_letter)
-            revealed_letters.add(random_letter)
-            
-        for letter in revealed_letters:    
-            for x in range(len(word)):
-                if word[x] == letter:
-                    underscore_words[x] = letter
-    else:
-        pass
-            
-    
-    attempts = 9  # Number of incorrect guesses allowed
+    give_early_hint(difficulty, word, underscore_words, guessed_word)
 
-    # --- Game loop ---
+    attempts = 10
+
     while attempts > 0:
-        print("_" * len(word))
-        for x in hangman_art[attempts]:
-            print(x)
-        
-        
-        print("\n" + " ".join(underscore_words))
+        show_game_state(word, attempts, underscore_words)
         user_guess = input("\nGuess a letter: ").strip().lower()
 
-        # Input validation
-        if not user_guess.isalpha():
-            print("Sorry, you can't input a number!")
-            continue
-        if len(user_guess) != 1:
-            print("You can only input one letter!")
-            continue
-        if user_guess in guessed_word:
-            print("The letter has been guessed.")
+        if not validate_input(user_guess, guessed_word):
             continue
 
         guessed_word.append(user_guess)
 
-        # Correct guess
         if user_guess in word:
-            for i in range(len(word)):
-                if word[i] == user_guess:
-                    underscore_words[i] = user_guess
-            print("Correct (✅)")
-
-        # Wrong guess
+            handle_correct_guess(user_guess, word, underscore_words)
         else:
-            attempts -= 1
-            if attempts != 0:
-                print(f"Wrong (❌), you have {attempts} attempt(s) left.")
+            attempts = handle_wrong_guess(attempts)
 
-        # Win condition
         if "_" not in underscore_words:
-            print("_" * len(word))
-            for x in hangman_art[attempts]:
-                print(x)
-            print("_" * len(word))
+            show_game_state(word, attempts, underscore_words)
             print(f"\n🎉 Congratulations! You guessed the word: {word}")
             print("🏆 You win!\n")
             break
 
-    # Lose condition
     else:
-        print("_" * len(word))
-        for x in hangman_art[attempts]:
-            print(x)
-        print("_" * len(word))
+        show_game_state(word, attempts, underscore_words)
         print("\n💀 Game Over!")
         print(f"The word was {word}\n")
 
