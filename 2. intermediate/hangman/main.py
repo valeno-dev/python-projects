@@ -93,13 +93,13 @@ HANGMAN_ART = {
 # =================
 
 def display_hangman(attempts: int):
-    #Display hangman art according to remaining attempts.
+    #Display hangman art according to remaining attempts
     for line in HANGMAN_ART[attempts]:
         print(line)
 
 
 def show_difficulty_menu():
-    #Show difficulty menu.
+    #Show difficulty menu
     print("\nDifficulty levels: ")
     print("1️⃣   Easy")
     print("2️⃣   Medium")
@@ -107,7 +107,7 @@ def show_difficulty_menu():
 
 
 def select_words_by_difficulty(difficulty: str):
-    #Return list of words based on chosen difficulty.
+    #Return list of words based on chosen difficulty
     if difficulty == "1":
         return [w for w in WORDS if len(w) <= 7]
     elif difficulty == "2":
@@ -120,7 +120,7 @@ def select_words_by_difficulty(difficulty: str):
 
 
 def give_early_hint(difficulty: str, word: str, underscore_words: list, guessed_word: list):
-    #Reveal 1–2 letters based on difficulty.
+    #Reveal 1–2 letters based on difficulty
     revealed_letters = set()
     if difficulty == "1":
         num_hint = 2
@@ -141,7 +141,7 @@ def give_early_hint(difficulty: str, word: str, underscore_words: list, guessed_
 
 
 def validate_input(user_guess: str, guessed_word: list):
-    """Validate player input."""
+    #Validasi player input
     if not user_guess.isalpha():
         print("Sorry, you can't input a number!")
         return False
@@ -155,7 +155,7 @@ def validate_input(user_guess: str, guessed_word: list):
 
 
 def handle_correct_guess(user_guess: str, word: str, underscore_words: list):
-    """Update display for correct guess."""
+    #Update display for correct guess
     for i, letter in enumerate(word):
         if letter == user_guess:
             underscore_words[i] = user_guess
@@ -163,7 +163,7 @@ def handle_correct_guess(user_guess: str, word: str, underscore_words: list):
 
 
 def handle_wrong_guess(attempts: int):
-    """Handle wrong guess and reduce attempt count."""
+    #Handle wrong guess and reduce attempt count
     attempts -= 1
     if attempts != 0:
         print(f"Wrong (❌), you have {attempts} attempt(s) left.")
@@ -171,7 +171,7 @@ def handle_wrong_guess(attempts: int):
 
 
 def show_game_state(word: str, attempts: int, underscore_words: list):
-    """Display hangman and word progress."""
+    #Display hangman and word progress
     print("_" * len(word))
     display_hangman(attempts)
     print("\n" + " ".join(underscore_words))
