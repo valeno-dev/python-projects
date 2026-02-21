@@ -16,7 +16,7 @@ def guess_num_bot(max_number, max_attempt):
     Returns:
         None
     """
-    
+
     print(f"\n🎯 Think of a number between 1 and {max_number}, and I will try to guess it!")
     print(f"🤖 I have {max_attempt} attempts to guess your number! After each guess, tell me if I'm too high or too low!\n")
     print("1️⃣  Random Mode (guess randomly each time)")
@@ -81,3 +81,4 @@ def guess_num_bot(max_number, max_attempt):
 
 if __name__ == "__main__":
     guess_num_bot(100, 7) #max_number to guess, max attempt to have
+
