@@ -1,4 +1,4 @@
-#Quiz game 
+#Quiz game  
 import random 
 
 def get_quiz_questions():
