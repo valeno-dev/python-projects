@@ -1,5 +1,5 @@
 #Quiz game  
-import random  
+import random   
 
 def get_quiz_questions():
     return [
