@@ -7,7 +7,7 @@ def game_board(board):
         x += 1
         if x < 3:
             print("-" * 9)
-    print("\n")
+    print("\n") 
 
 
 def check_winning(board, symbol):
