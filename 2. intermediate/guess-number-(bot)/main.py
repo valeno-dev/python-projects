@@ -1,6 +1,6 @@
 import random
 
-def guess_num_bot(max_number, max_attempt):
+def guess_num_bot(max_number, max_attempt): 
     """
     🎯 Let the bot try to guess the number you're thinking of.
 
