@@ -4,7 +4,7 @@ import random
 # =============
 # DATA SECTION
 # =============
-
+ 
 WORDS = [
     "plastic", "journey", "worship", "caption", "vampire",
     "flaming", "kitchen", "sandbox", "treacle", "founder",
