@@ -49,7 +49,7 @@ class BankAccount:
         self.balance -= amount
         print(f"Withdrawal successful. Current balance: ${self.balance}")
 
-    def run(self):
+    def main(self):
         self.ask_name()
         print(f"\nHello {self.user_name}!")
 
