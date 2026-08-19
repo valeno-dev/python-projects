@@ -1,1 +1,2 @@
+Too Lazy to write....＜（＾－＾）＞
 
