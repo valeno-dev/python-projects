@@ -6,7 +6,7 @@ This repository contains a set of Python projects I’ve created while learning 
 Each project helps me strengthen my understanding of **Python fundamentals**, **problem-solving**, and **logical thinking** — step by step toward becoming a **Machine Learning Engineer**.
 
 ---
-
+ 
 Each folder contains:
 - The source code (`.py` files)
 - A `README.md` explaining the specific project
