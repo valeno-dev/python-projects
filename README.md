@@ -2,7 +2,7 @@
      
 Welcome to my **Python Projects** collection!  
 This repository contains a set of Python projects I’ve created while learning and improving my programming skills — from beginner to advanced level.
- 
+  
 Each project helps me strengthen my understanding of **Python fundamentals**, **problem-solving**, and **logical thinking** — step by step toward becoming a **Machine Learning Engineer**.
 
 ---
